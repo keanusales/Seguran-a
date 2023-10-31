@@ -24,12 +24,12 @@ void Generator::genGroup() {
 }
 
 void Generator::genGener() {
-  cuint64 order = (group - 1);
+  cuint64 euler = (group - 1);
   u64deque queue;
   for (uint64 elem = 2; elem < group; elem++) {
-    bool isGen = 1;
-    for (uint64 pow = 1; pow < order; pow++) {
-      cuint64 res = modpow(elem, pow, group);
+    bool isGen = 1; uint64 res = 1;
+    for (uint64 pow = 1; pow < euler; pow++) {
+      res = (res * elem) % group;
       if (res == 1) {isGen = 0; break;}
     }
     if (isGen) queue.push_back(elem);

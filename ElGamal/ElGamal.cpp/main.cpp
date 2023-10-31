@@ -7,7 +7,7 @@ int main() {
   system("cls||clear");
   ElGamal A(30000, 50000);
   publicKey key = A.getPublicKey();
-  key.message = 2763; // Modifico de meu lado
+  key.message = 5863; // Modifico de meu lado
   cout << "A tornou publico:" << key << "\n";
   encripted encript = encriptMess(key);
   cout << "Encriptada: " << encript << "\n";
