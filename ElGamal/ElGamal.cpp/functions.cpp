@@ -34,7 +34,7 @@ cuint64 modpow(uint64 a, uint64 n, cuint64 p) {
   while (n > 0) {
     if (n % 2) r = (r * a) % p;
     a = (a * a) % p;
-    n = floor(n/2);
+    n = (n / 2);
   }
   return (r % p);
 }
@@ -44,7 +44,7 @@ cuint64 inverse(cuint64 num, cuint64 group) {
   int64 r = 0, s = 1, t = group;
   int64 q, u, v, w;
   while (t > 0) {
-    q = floor(g/t);
+    q = (g / t);
     u = x - (q * r);
     v = y - (q * s);
     w = g - (q * t);
