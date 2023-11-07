@@ -18,8 +18,8 @@ using std::deque;
 #include <iostream>
 using std::cout;
 
-typedef unsigned uint;
-typedef deque <uint> udeque;
-typedef const uint cuint;
+typedef unsigned long long uint64;
+typedef deque <uint64> u64deque;
+typedef const uint64 cuint64;
 
 #endif

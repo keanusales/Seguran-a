@@ -1,7 +1,7 @@
 #ifndef functions_cpp
 #define functions_cpp
 
-#include "diffiehellman.hpp"
+#include "hellman.hpp"
 
 __attribute__((constructor))
 void genSeed() {
@@ -9,19 +9,19 @@ void genSeed() {
   srand(time.time_since_epoch().count());
 }
 
-cuint random(cuint min, cuint max) {
-  uint choice = rand();
+cuint64 random(cuint64 min, cuint64 max) {
+  uint64 choice = rand();
   choice %= (max - min);
   choice += min;
   return choice;
 }
 
-cuint modpow(uint a, uint n, cuint p) {
-  uint r = 1;
+cuint64 modpow(uint64 a, uint64 n, cuint64 p) {
+  uint64 r = 1;
   while (n > 0) {
     if (n % 2) r = (r * a) % p;
     a = (a * a) % p;
-    n = floor(n/2);
+    n = (n / 2);
   }
   return (r % p);
 }
